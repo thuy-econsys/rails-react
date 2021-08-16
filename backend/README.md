@@ -1,0 +1,1 @@
+[OAuth2 Resource Owner Password Credentials Grant](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/password.html) type flow
