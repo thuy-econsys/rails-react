@@ -24,6 +24,6 @@ module V1
 
     protected
 
-    # TODO add strong params
+    # TODO use strong params defined in parent
   end
 end

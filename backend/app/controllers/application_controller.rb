@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include AbstractController::Translation
 
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   before_action :authenticate_user_from_token!
 
   respond_to :json
@@ -46,4 +46,7 @@ class ApplicationController < ActionController::Base
     render json: {error: t('unauthorized')}, status: 401  # Authentication timeout
   end
 
+  protected
+
+  # TODO strong params https://henrytabima.github.io/rails-setup/docs/devise/strong-parameters
 end
