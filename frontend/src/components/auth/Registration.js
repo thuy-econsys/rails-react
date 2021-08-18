@@ -25,29 +25,29 @@ export default class Registration extends Component {
 
   // submit form inputs to Rails API 
   handleSubmit(event) {
-    // const {
-    //   username,
-    //   email,
-    //   password,
-    //   password_confirmation
-    // }
+    const {
+      username,
+      email,
+      password,
+      password_confirmation
+    } = this.state;
 
-    // axios.post("http://localhost:5000/v1/login", 
-    //   {
-    //     username: username,
-    //     email: email,
-    //     password: password,
-    //     password_confirmation: password_confirmation
-    //   },
-    //   { withCredentials: true }
-    // )
-    // .then(response => {
-    //   console.log("registration response ", response);
-    // })
-    // .catch(error => {
-    //   console.log("registration error ", error);
-    // })
-    console.log("handling submissing ", event)
+    axios.post("http://localhost:5000/v1/login", 
+      {
+        username: username,
+        email: email,
+        password: password,
+        password_confirmation: password_confirmation
+      },
+      { withCredentials: true }
+    )
+    .then(response => {
+      console.log("registration response ", response);
+    })
+    .catch(error => {
+      console.log("registration error ", error);
+    })
+    // console.log("handling submission ", event);
     event.preventDefault();
   }
 
