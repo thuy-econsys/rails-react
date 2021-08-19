@@ -32,6 +32,10 @@ export default class Registration extends Component {
       password_confirmation
     } = this.state;
 
+    const headers = {
+      "Access-Control-Allow-Credentials": "true"
+    }
+
     axios.post("http://localhost:5000/v1/login", 
       {
         username: username,
@@ -39,6 +43,7 @@ export default class Registration extends Component {
         password: password,
         password_confirmation: password_confirmation
       },
+      { headers: headers },
       { withCredentials: true }
     )
     .then(response => {
